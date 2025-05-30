@@ -15,4 +15,12 @@ router.get('/sobre', (req, res) => {
   res.sendFile(path.join(viewsPath, 'sobre.html'));
 });
 
+router.get('/404', (req, res) => {
+  res.sendFile(path.join(viewsPath, '404.html'));
+});
+
+router.use((req, res) => {
+  res.status(404).sendFile(path.join(viewsPath, '404.html'));
+});
+
 export default router;
